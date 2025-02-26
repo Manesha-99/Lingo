@@ -12,9 +12,10 @@ namespace Lingo.Data
         }
 
         public DbSet<Slang> Slangs { get; set; }
+        public DbSet<StrongLevel> StrongLevels { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Continent> Continents { get; set; }
-        public DbSet<StrongLevel> StrongLevels { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -60,7 +61,7 @@ namespace Lingo.Data
                 },
                 new Continent()
                 {
-                    Id= Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b22815"),
+                    Id= Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b2281"),
                     Name = "North America",
                     CodeName = "NAR"
                 },
@@ -138,40 +139,71 @@ namespace Lingo.Data
                     Id = Guid.Parse("c620e736-31e4-415d-aff4-945c77209f65"),
                     Word = "Lit",
                     Meaning = "Exciting, amazing, or excellent",
-                    StrongLevelId = Guid.Parse("0cbe9559-f6d8-4e69-9ad7-16ca9560bd17"),
-                    CountryId = Guid.Parse("363bf2ce-a988-4b0a-88e5-12034f6c6aa5"),
-                    ContinentId = Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b22815")
+                    StrongLevelId = Guid.Parse("0CBE9559-F6D8-4E69-9AD7-16CA9560BD17"),
+                    CountryId = Guid.Parse("363BF2CE-A988-4B0A-88E5-12034F6C6AA5"),
+                    ContinentId = Guid.Parse("35AA616E-9D5A-411C-BB33-04A7EC0B2281")
                 },
                 new Slang()
                 {
-                    Id = Guid.Parse("c620e736-31e4-415d-aff4-945c77209f65"),
+                    Id = Guid.Parse("5a3c1374-9f3c-4a96-a555-566403c28973"),
                     Word = "Cap",
                     Meaning = "Means a lie",
-                    StrongLevelId = Guid.Parse("1c8b6236-74f1-40ac-a127-a0f8b572432b"),
+                    StrongLevelId = Guid.Parse("1C8B6236-74F1-40AC-A127-A0F8B572432B"),
                     CountryId = Guid.Parse("363bf2ce-a988-4b0a-88e5-12034f6c6aa5"),
-                    ContinentId = Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b22815")
+                    ContinentId = Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b2281")
                 },
                 new Slang()
                 {
-                    Id = Guid.Parse("c620e736-31e4-415d-aff4-945c77209f65"),
+                    Id = Guid.Parse("0854b55b-dfc4-4b44-9efc-32a9d883b88a"),
                     Word = "Knackered",
                     Meaning = "Extremely tired or exhausted",
-                    StrongLevelId = Guid.Parse("0cbe9559-f6d8-4e69-9ad7-16ca9560bd17"),
-                    CountryId = Guid.Parse("947664b6-25a2-42ad-b920-b427391b97b6"),
-                    ContinentId = Guid.Parse("c8841377-d6a4-477e-8102-08fc0edc7cec")
+                    StrongLevelId = Guid.Parse("0CBE9559-F6D8-4E69-9AD7-16CA9560BD17"),
+                    CountryId = Guid.Parse("947664B6-25A2-42AD-B920-B427391B97B6"),
+                    ContinentId = Guid.Parse("C8841377-D6A4-477E-8102-08FC0EDC7CEC")
                 },
                 new Slang()
                 {
-                    Id = Guid.Parse("c620e736-31e4-415d-aff4-945c77209f65"),
-                    Word = "Knackered",
-                    Meaning = "Extremely tired or exhausted",
-                    StrongLevelId = Guid.Parse("0cbe9559-f6d8-4e69-9ad7-16ca9560bd17"),
-                    CountryId = Guid.Parse("947664b6-25a2-42ad-b920-b427391b97b6"),
-                    ContinentId = Guid.Parse("c8841377-d6a4-477e-8102-08fc0edc7cec")
+                    Id = Guid.Parse("2f66ce89-bb29-49da-92de-e645dfcb8fab"),
+                    Word = "Faggot",
+                    Meaning = "A gay man",
+                    StrongLevelId = Guid.Parse("D44ED0A3-72F8-4E8C-810B-3DBB270366D5"),
+                    CountryId = Guid.Parse("363bf2ce-a988-4b0a-88e5-12034f6c6aa5"),
+                    ContinentId = Guid.Parse("35aa616e-9d5a-411c-bb33-04a7ec0b2281")
                 },
+                new Slang()
+                {
+                    Id = Guid.Parse("84e55f54-2214-4145-8cf3-ee28943fc189"),
+                    Word = "làiháma",
+                    Meaning = "An Ugly Boy",
+                    StrongLevelId = Guid.Parse("0CBE9559-F6D8-4E69-9AD7-16CA9560BD17"),
+                    CountryId = Guid.Parse("8F348057-B5F9-4F47-85B2-8CE65A91B7BB"),
+                    ContinentId = Guid.Parse("5C97203C-30AF-48E7-993A-29A316FAB220")
+                },
+                new Slang()
+                {
+                    Id = Guid.Parse("a6b4703b-4a0e-4a7b-9ffd-9bdca7a9338b"),
+                    Word = "ID photo",
+                    Meaning = "the washing of your face and teeth only, instead of your whole body ",
+                    StrongLevelId = Guid.Parse("0CBE9559-F6D8-4E69-9AD7-16CA9560BD17"),
+                    CountryId = Guid.Parse("9ED2D84B-BD42-4D20-965E-01E147F8C3C0"),
+                    ContinentId = Guid.Parse("A5F9D466-B3AC-4E80-9C6A-2730626DCE25")
+                },
+                new Slang()
+                {
+                    Id = Guid.Parse("329eb9d0-147b-4467-b680-b8e52e9a2d76"),
+                    Word = "Meno male",
+                    Meaning = "Means that's good or thank God",
+                    StrongLevelId = Guid.Parse("0CBE9559-F6D8-4E69-9AD7-16CA9560BD17"),
+                    CountryId = Guid.Parse("9811952C-744C-4BAE-91B3-14B4A4D2EE3E"),
+                    ContinentId = Guid.Parse("C8841377-D6A4-477E-8102-08FC0EDC7CEC")
+                }
 
             };
+
+            modelBuilder.Entity<Slang>().HasData(slangs);
+
         }
+
 
     }
 }

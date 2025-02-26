@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lingo.Migrations
 {
     [DbContext(typeof(LingoDbContext))]
-    [Migration("20250225201436_Initial Migration")]
+    [Migration("20250226083530_Initial Migration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
