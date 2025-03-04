@@ -10,6 +10,8 @@ namespace Lingo.Mapping
         {
             CreateMap<Slang, GetSlangsDto>().ReverseMap();
             CreateMap<Slang, AddSlangRequestDto>().ReverseMap();
+            CreateMap<Country, GetCountriesDto>().ReverseMap();
+            CreateMap<Country, AddCountriesDto>().ReverseMap();
 
         }
 

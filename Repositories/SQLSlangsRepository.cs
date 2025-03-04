@@ -1,6 +1,7 @@
 ﻿using Lingo.Data;
 using Lingo.Model.Domain;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -20,7 +21,7 @@ namespace Lingo.Repositories
 
         public async Task<Slang> CreateAsync(Slang slang)
         {
-            await dbContext.AddAsync(slang);
+            await dbContext.Slangs.AddAsync(slang);
             await dbContext.SaveChangesAsync();
 
             return slang;

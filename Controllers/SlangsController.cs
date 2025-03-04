@@ -2,6 +2,7 @@
 using Lingo.Model.Domain;
 using Lingo.Model.Dto;
 using Lingo.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ namespace Lingo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class SlangsController : ControllerBase
     {
         private readonly ISlangsRepository slangsRepository;
@@ -24,6 +26,7 @@ namespace Lingo.Controllers
 
         //Function for get all slangs------------------------------------------
         [HttpGet]
+        [Authorize(Roles = "Reader, Writer")]
 
         public async Task<IActionResult> GetAll([FromQuery] string? filterOn=null, [FromQuery] string? filterQuery=null,
             [FromQuery] string? sortBy = null, [FromQuery] bool isAscending=true, [FromQuery] int pageNumber=1, [FromQuery] int pageSize=100)
@@ -42,6 +45,7 @@ namespace Lingo.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Reader, Writer")]
 
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
@@ -58,6 +62,7 @@ namespace Lingo.Controllers
         //Function to Create a slang----------------------------------
 
         [HttpPost]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create([FromBody] AddSlangRequestDto addSlangRequestDto)
         {
             var slangDomainModel = mapper.Map<Slang>(addSlangRequestDto);
@@ -78,6 +83,7 @@ namespace Lingo.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Writer")]
 
         public async Task<IActionResult> UpdateById([FromRoute] Guid id, [FromBody] AddSlangRequestDto addSlangRequestDto)
         {
@@ -100,6 +106,7 @@ namespace Lingo.Controllers
 
         [HttpDelete]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Writer")]
 
         public async Task<IActionResult> DeleteByID([FromRoute] Guid id)
         {
